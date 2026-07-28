@@ -49,6 +49,18 @@ url:
 # then add in the baseurl here, like this: "/repository-name"
 baseurl: ""
 
+regal:
+  forest: "#0f3028"
+  forest_dark: "#071b18"
+  emerald: "#1b5945"
+  navy: "#10213a"
+  navy_dark: "#07111f"
+  gold: "#d6ad52"
+  gold_light: "#f4df9a"
+  gold_dark: "#8b682b"
+  parchment: "#f3ead0"
+  parchment_dark: "#ded0aa"
+
 #
 # !! You don't need to change any of the configuration flags below !!
 #

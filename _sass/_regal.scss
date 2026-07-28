@@ -1131,6 +1131,28 @@ body.regal-site {
     overflow-wrap: break-word;
   }
 
+.alex-page-content {
+  position: relative;
+  z-index: 1;
+  max-width: 850px;
+  margin: 0 auto;
+  color: #49483f;
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.alex-page-content h2,
+.alex-page-content h3 {
+  margin-top: 2rem;
+  color: var(--alex-forest-dark);
+  font-family: "Cinzel", Georgia, serif;
+}
+
+.alex-page-content a {
+  color: var(--alex-emerald);
+  font-weight: 700;
+}
+
   /* =========================================================
      Accessibility
      ========================================================= */

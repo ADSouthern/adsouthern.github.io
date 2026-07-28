@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<main class="alex-kingdom">
+  <section class="alex-scroll alex-content-page">
+    <header class="alex-section-heading">
+      {% if page.kicker %}
+        <p class="alex-kicker">
+          {{ page.kicker }}
+        </p>
+      {% endif %}
+
+      <h1 class="alex-section-title">
+        {{ page.title }}
+      </h1>
+    </header>
+
+    <div class="alex-page-content">
+      {{ content }}
+    </div>
+  </section>
+</main>

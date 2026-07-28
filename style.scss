@@ -8,6 +8,28 @@
 @import "reset";
 @import "variables";
 // Syntax highlighting @import is at the bottom of this file
+:root {
+  --alex-forest: {{ site.regal.forest | default: "#0f3028" }};
+  --alex-forest-dark: {{ site.regal.forest_dark | default: "#071b18" }};
+  --alex-emerald: {{ site.regal.emerald | default: "#1b5945" }};
+  --alex-navy: {{ site.regal.navy | default: "#10213a" }};
+  --alex-navy-dark: {{ site.regal.navy_dark | default: "#07111f" }};
+
+  --alex-gold: {{ site.regal.gold | default: "#d6ad52" }};
+  --alex-gold-light: {{ site.regal.gold_light | default: "#f4df9a" }};
+  --alex-gold-dark: {{ site.regal.gold_dark | default: "#8b682b" }};
+
+  --alex-parchment: {{ site.regal.parchment | default: "#f3ead0" }};
+  --alex-parchment-dark:
+    {{ site.regal.parchment_dark | default: "#ded0aa" }};
+
+  --alex-ink: #26271f;
+  --alex-muted: #666252;
+  --alex-white: #fffdf4;
+  --alex-border: rgba(214, 173, 82, 0.5);
+  --alex-shadow: 0 24px 65px rgba(3, 15, 15, 0.3);
+}
+
 
 /**************/
 /* BASE RULES */
@@ -287,3 +309,4 @@ footer {
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
 @import "svg-icons";
+@import "regal";

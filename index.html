@@ -847,6 +847,149 @@ title: Alexander
       transition: none;
     }
   }
+
+  /* =========================================================
+   Layout and spacing fixes
+   Add these rules at the END of the existing stylesheet
+   ========================================================= */
+
+/*
+  Break the design out of a narrow Jekyll theme wrapper while
+  keeping it centered and preventing horizontal scrolling.
+*/
+.alex-kingdom {
+  position: relative;
+  left: 50%;
+
+  width: min(1180px, calc(100vw - 2rem));
+  max-width: none;
+
+  margin: 2rem 0 5rem;
+  padding: clamp(0.75rem, 2vw, 1.5rem);
+
+  transform: translateX(-50%);
+}
+
+/* Prevent grid contents from forcing columns to become cramped. */
+.alex-hero-content,
+.alex-crest-area,
+.alex-about-grid > *,
+.alex-card-grid > *,
+.alex-posts > * {
+  min-width: 0;
+}
+
+/* Give the hero more breathing room. */
+.alex-hero {
+  grid-template-columns:
+    minmax(0, 1.35fr)
+    minmax(240px, 0.65fr);
+
+  column-gap: clamp(2rem, 6vw, 5rem);
+  row-gap: 3rem;
+
+  padding:
+    clamp(4rem, 8vw, 7rem)
+    clamp(2rem, 7vw, 6rem);
+}
+
+/* Increase separation between the parchment sections. */
+.alex-scroll {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding:
+    clamp(2.5rem, 6vw, 5rem)
+    clamp(1.5rem, 5vw, 4rem);
+}
+
+/* Add more space after section headings. */
+.alex-section-heading {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+/* Increase internal grid spacing. */
+.alex-about-grid {
+  gap: clamp(2.5rem, 6vw, 5rem);
+}
+
+.alex-card-grid,
+.alex-posts {
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+
+/* Prevent long text from expanding or compressing columns. */
+.alex-title,
+.alex-intro,
+.alex-copy,
+.alex-card,
+.alex-post,
+.alex-detail {
+  overflow-wrap: anywhere;
+}
+
+/* Give the crest caption normal document spacing. */
+.alex-crest-caption {
+  position: static;
+  display: block;
+  margin-top: 1.25rem;
+}
+
+/*
+  Switch to a single-column hero sooner.
+  The original 850px breakpoint can feel crowded on tablets
+  and within themes that add large side padding.
+*/
+@media (max-width: 1000px) {
+  .alex-hero,
+  .alex-about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .alex-hero {
+    text-align: center;
+  }
+
+  .alex-intro {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .alex-actions {
+    justify-content: center;
+  }
+
+  .alex-crest-area {
+    grid-row: 1;
+  }
+
+  .alex-crest-frame {
+    width: min(230px, 70vw);
+  }
+}
+
+@media (max-width: 650px) {
+  .alex-kingdom {
+    width: min(100%, calc(100vw - 1rem));
+    margin-top: 0.5rem;
+    padding: 0.25rem;
+  }
+
+  .alex-hero {
+    padding: 4.5rem 1.5rem 3.5rem;
+  }
+
+  .alex-scroll {
+    padding: 2.75rem 1.35rem;
+  }
+
+  .alex-card {
+    min-height: auto;
+    padding: 1.5rem;
+  }
+
+  .alex-title {
+    font-size: clamp(2.65rem, 14vw, 4.2rem);
+  }
+}
 </style>
 
 <main class="alex-kingdom">

@@ -63,6 +63,15 @@ regal:
   parchment: "#f3ead0"
   parchment_dark: "#ded0aa"
 
+defaults:
+- scope:
+    path: ""
+    type: posts
+  values:
+    layout: post
+    body_class: "regal-site post-page"
+    full_width: true
+
 #
 # !! You don't need to change any of the configuration flags below !!
 #

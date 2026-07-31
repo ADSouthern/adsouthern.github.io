@@ -1120,8 +1120,9 @@ body.regal-site {
 }
 
 .alex-post-content {
-  max-width: 740px;
-  margin: 0 auto;
+   width: 100%;
+  max-width: 1050px;
+  margin-inline: auto;
 
   color: #49483f;
 

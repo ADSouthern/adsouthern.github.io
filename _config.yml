@@ -62,6 +62,18 @@ regal:
   gold_dark: "#8b682b"
   parchment: "#f3ead0"
   parchment_dark: "#ded0aa"
+  
+navigation:
+  - name: Home
+    url: /
+  - name: Blog
+    url: /blog/
+  - name: About
+    url: /about/
+  - name: Projects
+    url: /projects/
+  - name: Contact
+    url: /contact/
 
 defaults:
 - scope:

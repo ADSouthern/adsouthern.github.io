@@ -70,6 +70,8 @@ navigation:
     url: /blog/
   - name: About
     url: /about/
+  - name: Resume
+    url: /resume/
   - name: Projects
     url: /projects/
   - name: Contact

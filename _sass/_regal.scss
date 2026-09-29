@@ -1428,3 +1428,932 @@ body.regal-site {
       transition: none;
     }
   }
+/* =========================================================
+   Resume Page
+   ========================================================= */
+
+.alex-resume {
+  position: relative;
+  left: 50%;
+
+  width: min(1180px, calc(100vw - 2rem));
+  max-width: none;
+
+  margin: 2rem 0 5rem;
+  padding: clamp(0.75rem, 2vw, 1.5rem);
+
+  transform: translateX(-50%);
+}
+
+/* =========================================================
+   Resume Hero
+   ========================================================= */
+
+.alex-resume-hero {
+  position: relative;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.45fr)
+    minmax(220px, 0.55fr);
+
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+
+  overflow: hidden;
+
+  padding:
+    clamp(3.5rem, 7vw, 6rem)
+    clamp(2rem, 6vw, 5rem);
+
+  border: 1px solid rgba(244, 223, 154, 0.55);
+  border-radius: 8px;
+
+  color: var(--alex-white);
+
+  background:
+    radial-gradient(
+      circle at 82% 18%,
+      rgba(214, 173, 82, 0.18),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 10% 90%,
+      rgba(27, 89, 69, 0.38),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      var(--alex-navy-dark),
+      var(--alex-forest-dark)
+    );
+
+  box-shadow:
+    0 0 0 5px var(--alex-navy-dark),
+    0 0 0 7px rgba(214, 173, 82, 0.65),
+    var(--alex-shadow);
+}
+
+.alex-resume-hero::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+
+  border: 1px solid rgba(244, 223, 154, 0.3);
+
+  pointer-events: none;
+}
+
+.alex-resume-identity,
+.alex-resume-crest {
+  position: relative;
+  z-index: 2;
+
+  min-width: 0;
+}
+
+.alex-resume-name {
+  margin: 0;
+
+  color: var(--alex-white);
+
+  font-family: "Cinzel", Georgia, serif;
+  font-size: clamp(2.6rem, 6vw, 5.25rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.035em;
+
+  text-wrap: balance;
+}
+
+.alex-resume-name span {
+  display: block;
+
+  margin-top: 0.1em;
+
+  color: var(--alex-gold-light);
+}
+
+.alex-resume-title {
+  margin: 1.1rem 0 0;
+
+  color: var(--alex-gold);
+
+  font-family: "Cinzel", Georgia, serif;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.alex-resume-summary {
+  max-width: 680px;
+
+  margin: 1.5rem 0 0;
+
+  color: rgba(255, 253, 244, 0.75);
+
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.alex-resume-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+
+  margin-top: 2rem;
+}
+
+.alex-resume-crest {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.alex-resume-crest-image {
+  display: block;
+
+  width: min(245px, 100%);
+  height: auto;
+
+  filter:
+    drop-shadow(0 24px 25px rgba(0, 0, 0, 0.35))
+    drop-shadow(0 0 16px rgba(214, 173, 82, 0.12));
+}
+
+/* =========================================================
+   Quick Facts
+   ========================================================= */
+
+.alex-resume-facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 1px;
+
+  margin-top: 2.5rem;
+
+  overflow: hidden;
+
+  border: 1px solid var(--alex-gold-dark);
+  border-radius: 5px;
+
+  background: var(--alex-gold-dark);
+
+  box-shadow: var(--alex-shadow);
+}
+
+.alex-resume-fact {
+  min-width: 0;
+
+  padding: 1.3rem 1.4rem;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--alex-parchment),
+      #faf5e6
+    );
+}
+
+.alex-resume-fact-label {
+  display: block;
+
+  margin-bottom: 0.35rem;
+
+  color: var(--alex-gold-dark);
+
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.alex-resume-fact-value {
+  display: block;
+
+  color: var(--alex-forest-dark);
+
+  font-size: 0.86rem;
+  font-weight: 700;
+
+  overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   Resume Main Grid
+   ========================================================= */
+
+.alex-resume-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.65fr)
+    minmax(270px, 0.65fr);
+
+  gap: clamp(1.5rem, 4vw, 3rem);
+
+  align-items: start;
+
+  margin-top: 2.5rem;
+}
+
+.alex-resume-main,
+.alex-resume-sidebar {
+  min-width: 0;
+}
+
+/* =========================================================
+   Main parchment sections
+   ========================================================= */
+
+.alex-resume-section {
+  position: relative;
+
+  padding:
+    clamp(2.25rem, 5vw, 4rem)
+    clamp(1.5rem, 4vw, 3.5rem);
+
+  border: 1px solid var(--alex-gold-dark);
+  border-radius: 5px;
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(139, 104, 43, 0.08),
+      transparent 25%
+    ),
+    linear-gradient(
+      135deg,
+      var(--alex-parchment),
+      #faf5e6 52%,
+      var(--alex-parchment-dark)
+    );
+
+  box-shadow:
+    inset 0 0 45px rgba(93, 71, 31, 0.1),
+    var(--alex-shadow);
+}
+
+.alex-resume-section + .alex-resume-section {
+  margin-top: 2rem;
+}
+
+.alex-resume-section::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+
+  border: 1px solid rgba(139, 104, 43, 0.25);
+
+  pointer-events: none;
+}
+
+.alex-resume-section-header {
+  position: relative;
+  z-index: 1;
+
+  margin-bottom: 2.5rem;
+
+  text-align: center;
+}
+
+.alex-resume-section-header h2 {
+  margin: 0;
+
+  color: var(--alex-forest-dark);
+
+  font-family: "Cinzel", Georgia, serif;
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+
+  text-wrap: balance;
+}
+
+.alex-resume-section-header::after {
+  content: "◇";
+
+  display: block;
+
+  margin-top: 0.7rem;
+
+  color: var(--alex-gold-dark);
+}
+
+/* =========================================================
+   Experience timeline
+   ========================================================= */
+
+.alex-resume-entry {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+
+  gap: 1.4rem;
+
+  padding-bottom: 2.5rem;
+}
+
+.alex-resume-entry:last-child {
+  padding-bottom: 0;
+}
+
+.alex-resume-entry-marker {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+}
+
+.alex-resume-entry-marker::after {
+  content: "";
+
+  position: absolute;
+  top: 50px;
+  bottom: -2.5rem;
+  left: 50%;
+
+  width: 1px;
+
+  background:
+    linear-gradient(
+      var(--alex-gold-dark),
+      rgba(139, 104, 43, 0.12)
+    );
+}
+
+.alex-resume-entry:last-child
+.alex-resume-entry-marker::after {
+  display: none;
+}
+
+.alex-resume-entry-marker span {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  place-items: center;
+
+  width: 46px;
+  height: 46px;
+
+  border: 1px solid var(--alex-gold-dark);
+  border-radius: 50%;
+
+  color: var(--alex-gold-dark);
+
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+
+  background: #f8f0d9;
+}
+
+.alex-resume-entry-content {
+  min-width: 0;
+}
+
+.alex-resume-entry-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 1.5rem;
+}
+
+.alex-resume-entry-heading h3 {
+  margin: 0;
+
+  color: var(--alex-forest-dark);
+
+  font-family: "Cinzel", Georgia, serif;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.4;
+}
+
+.alex-resume-organization {
+  margin: 0.35rem 0 0;
+
+  color: var(--alex-emerald);
+
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.alex-resume-date {
+  flex: 0 0 auto;
+
+  padding: 0.45rem 0.7rem;
+
+  border: 1px solid rgba(139, 104, 43, 0.3);
+
+  color: var(--alex-gold-dark);
+
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+
+  background: rgba(255, 253, 244, 0.45);
+
+  white-space: nowrap;
+}
+
+.alex-resume-location {
+  margin: 0.4rem 0 0;
+
+  color: var(--alex-muted);
+
+  font-size: 0.82rem;
+  font-style: italic;
+}
+
+.alex-resume-bullets {
+  margin: 1rem 0 0;
+  padding-left: 1.25rem;
+
+  color: #49483f;
+
+  line-height: 1.75;
+}
+
+.alex-resume-bullets li {
+  padding-left: 0.25rem;
+}
+
+.alex-resume-bullets li + li {
+  margin-top: 0.65rem;
+}
+
+.alex-resume-bullets li::marker {
+  color: var(--alex-gold-dark);
+}
+
+/* =========================================================
+   Projects
+   ========================================================= */
+
+.alex-resume-projects {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 1rem;
+}
+
+.alex-resume-project {
+  position: relative;
+
+  min-width: 0;
+
+  padding: 1.5rem;
+
+  border: 1px solid rgba(139, 104, 43, 0.35);
+
+  background: rgba(255, 253, 244, 0.48);
+}
+
+.alex-resume-project-number {
+  display: grid;
+  place-items: center;
+
+  width: 37px;
+  height: 37px;
+
+  margin-bottom: 1rem;
+
+  border: 1px solid var(--alex-gold-dark);
+  border-radius: 50%;
+
+  color: var(--alex-gold-dark);
+
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 0.7rem;
+}
+
+.alex-resume-project h3 {
+  margin: 0 0 0.7rem;
+
+  color: var(--alex-forest-dark);
+
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 1.1rem;
+}
+
+.alex-resume-project p {
+  margin: 0;
+
+  color: var(--alex-muted);
+
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.alex-resume-project-tags {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 0.4rem;
+
+  margin-top: 1rem;
+}
+
+.alex-resume-project-tags span {
+  padding: 0.35rem 0.55rem;
+
+  border: 1px solid rgba(139, 104, 43, 0.25);
+
+  color: var(--alex-emerald);
+
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+
+  background: rgba(243, 234, 208, 0.6);
+}
+
+/* =========================================================
+   Sidebar
+   ========================================================= */
+
+.alex-resume-sidebar {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.alex-resume-side-card {
+  position: relative;
+
+  padding: 1.7rem;
+
+  border: 1px solid var(--alex-gold-dark);
+  border-radius: 5px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--alex-parchment),
+      #faf5e6 55%,
+      var(--alex-parchment-dark)
+    );
+
+  box-shadow:
+    inset 0 0 30px rgba(93, 71, 31, 0.08),
+    0 15px 35px rgba(3, 15, 15, 0.2);
+}
+
+.alex-resume-side-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 7px;
+
+  border: 1px solid rgba(139, 104, 43, 0.23);
+
+  pointer-events: none;
+}
+
+.alex-resume-side-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.alex-resume-side-card > h2 {
+  margin: 0 0 1.4rem;
+
+  color: var(--alex-forest-dark);
+
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 1.45rem;
+}
+
+.alex-resume-skill-group + .alex-resume-skill-group {
+  margin-top: 1.5rem;
+}
+
+.alex-resume-skill-group h3 {
+  margin: 0 0 0.7rem;
+
+  color: var(--alex-gold-dark);
+
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 0.73rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.alex-resume-tags {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 0.45rem;
+}
+
+.alex-resume-tags span {
+  padding: 0.45rem 0.65rem;
+
+  border: 1px solid rgba(139, 104, 43, 0.3);
+
+  color: var(--alex-forest-dark);
+
+  font-size: 0.76rem;
+
+  background: rgba(255, 253, 244, 0.48);
+}
+
+.alex-resume-education h3 {
+  margin: 0;
+
+  color: var(--alex-forest-dark);
+
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 1rem;
+}
+
+.alex-resume-education > p {
+  margin: 0.5rem 0 0;
+
+  line-height: 1.6;
+}
+
+.alex-resume-small {
+  color: var(--alex-muted);
+
+  font-size: 0.8rem;
+}
+
+.alex-resume-simple-list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.alex-resume-simple-list li {
+  padding: 0.85rem 0;
+
+  border-bottom: 1px solid rgba(139, 104, 43, 0.18);
+}
+
+.alex-resume-simple-list li:first-child {
+  padding-top: 0;
+}
+
+.alex-resume-simple-list li:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.alex-resume-simple-list strong,
+.alex-resume-simple-list span {
+  display: block;
+}
+
+.alex-resume-simple-list strong {
+  color: var(--alex-forest-dark);
+
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.alex-resume-simple-list span {
+  margin-top: 0.25rem;
+
+  color: var(--alex-muted);
+
+  font-size: 0.73rem;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   Closing
+   ========================================================= */
+
+.alex-resume-closing {
+  margin-top: 2.5rem;
+  padding: 2rem 1.5rem;
+
+  border: 1px solid rgba(214, 173, 82, 0.5);
+
+  color: rgba(255, 253, 244, 0.7);
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 0,
+      rgba(214, 173, 82, 0.13),
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      var(--alex-navy-dark),
+      var(--alex-forest-dark)
+    );
+
+  box-shadow: var(--alex-shadow);
+}
+
+.alex-resume-closing span {
+  display: block;
+
+  margin-bottom: 0.65rem;
+
+  color: var(--alex-gold);
+
+  font-size: 1.2rem;
+}
+
+.alex-resume-closing p {
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   Responsive Resume
+   ========================================================= */
+
+@media (max-width: 950px) {
+  .alex-resume-hero,
+  .alex-resume-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .alex-resume-hero {
+    text-align: center;
+  }
+
+  .alex-resume-crest {
+    grid-row: 1;
+  }
+
+  .alex-resume-crest-image {
+    width: min(200px, 55vw);
+  }
+
+  .alex-resume-summary {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .alex-resume-actions {
+    justify-content: center;
+  }
+
+  .alex-resume-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .alex-resume {
+    width: calc(100vw - 1rem);
+    padding: 0.25rem;
+  }
+
+  .alex-resume-projects {
+    grid-template-columns: 1fr;
+  }
+
+  .alex-resume-entry {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .alex-resume-entry-marker span {
+    width: 38px;
+    height: 38px;
+  }
+
+  .alex-resume-entry-marker::after {
+    top: 42px;
+  }
+
+  .alex-resume-entry-heading {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .alex-resume-date {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 500px) {
+  .alex-resume-hero {
+    padding: 4rem 1.25rem 3rem;
+  }
+
+  .alex-resume-name {
+    font-size: clamp(2.3rem, 12vw, 3.5rem);
+  }
+
+  .alex-resume-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .alex-resume-section {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .alex-resume-side-card {
+    padding: 1.5rem;
+  }
+
+  .alex-resume-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .alex-resume-actions .alex-button {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   Print / PDF-friendly Resume
+   ========================================================= */
+
+@media print {
+  .wrapper-masthead,
+  .wrapper-footer,
+  .alex-resume-actions,
+  .alex-resume-closing {
+    display: none !important;
+  }
+
+  body,
+  body.regal-site {
+    color: #222 !important;
+    background: #fff !important;
+  }
+
+  #main.container--full {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  .alex-resume {
+    position: static;
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    transform: none;
+  }
+
+  .alex-resume-hero,
+  .alex-resume-section,
+  .alex-resume-side-card,
+  .alex-resume-facts {
+    box-shadow: none;
+  }
+
+  .alex-resume-hero {
+    padding: 1.5rem;
+
+    color: #111;
+
+    background: #fff;
+
+    border: 2px solid #8b682b;
+  }
+
+  .alex-resume-name,
+  .alex-resume-title,
+  .alex-resume-summary,
+  .alex-crest-caption {
+    color: #111;
+  }
+
+  .alex-resume-grid {
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+  }
+
+  .alex-resume-section,
+  .alex-resume-side-card,
+  .alex-resume-fact {
+    background: #fff;
+  }
+
+  .alex-resume-section,
+  .alex-resume-side-card,
+  .alex-resume-entry,
+  .alex-resume-project {
+    break-inside: avoid;
+  }
+}

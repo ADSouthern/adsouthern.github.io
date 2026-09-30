@@ -68,10 +68,10 @@ navigation:
     url: /
   - name: Blog
     url: /blog/
-  - name: About
-    url: /about/
   - name: Resume
     url: /resume/
+  - name: About
+    url: /about/
   - name: Projects
     url: /projects/
   - name: Contact
